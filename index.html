@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madagascar Mall | Nairobi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000000; }
+        .hero-border { border-bottom: 2px solid #000; }
+        .gallery-img { filter: grayscale(100%); transition: filter 0.3s; border: 1px solid #000; }
+        .gallery-img:hover { filter: grayscale(0%); }
+        .peak-footer { border-top: 1px solid #000; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
 
+    <nav class="p-6 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-black">
+        <h1 class="text-2xl font-black tracking-tighter uppercase">Madagascar Mall</h1>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
+            <a href="index.html" class="underline">Home</a>
+            <a href="reviews.html" class="hover:underline">Reviews</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+        <div class="relative flex items-center border border-black px-2 py-1">
+            <input type="text" placeholder="SEARCH..." class="bg-transparent text-xs outline-none w-24 md:w-40 uppercase">
+            <span class="text-xs">🔍</span>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <section class="max-w-5xl mx-auto px-6 py-20 hero-border">
+            <h2 class="text-6xl md:text-8xl font-black leading-none mb-8 uppercase">Modern. Industrial. Nairobi.</h2>
+            <p class="text-lg md:text-2xl max-w-2xl font-light leading-relaxed">
+                Madagascar Mall is a premier containerized shopping destination located in the heart of Embakasi. 
+                A hub for local businesses, family fun, and unique architecture. Open daily from 8:00 AM to 8:00 PM.
+            </p>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16">
+            <h3 class="text-xs font-bold uppercase tracking-[0.3em] mb-8">The Space</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="aspect-square bg-gray-100 flex items-center justify-center border border-black overflow-hidden">
+                    <p class="text-[10px] uppercase font-bold">Mall Exterior</p>
+                </div>
+                <div class="aspect-square bg-gray-100 flex items-center justify-center border border-black overflow-hidden">
+                    <p class="text-[10px] uppercase font-bold">Showroom Interior</p>
+                </div>
+                <div class="aspect-square bg-gray-100 flex items-center justify-center border border-black overflow-hidden">
+                    <p class="text-[10px] uppercase font-bold">Family Zone</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="peak-footer bg-white p-10 mt-10">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-xs uppercase tracking-widest font-bold">
+            <div>
+                <h4 class="mb-4 text-gray-400">Location</h4>
+                <p>Unnamed Road, Tassia</p>
+                <p>Nairobi, Kenya</p>
+            </div>
+            <div>
+                <h4 class="mb-4 text-gray-400">Contact</h4>
+                <p>0742 152821</p>
+                <p>info@madagascarmall.co.ke</p>
+            </div>
+            <div>
+                <h4 class="mb-4 text-gray-400">Links</h4>
+                <p><a href="#" class="hover:text-gray-500">Privacy Policy</a></p>
+                <p><a href="#" class="hover:text-gray-500">Cookie Policy</a></p>
+                <p><a href="#" class="hover:text-gray-500">My Account</a></p>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-[10px] text-gray-400 uppercase tracking-widest">
+            © 2025 Madagascar Mall. Official Business Platform.
+        </div>
+    </footer>
+
+</body>
+</html>
