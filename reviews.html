@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Madagascar Mall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000000; }
+        .input-minimal { border: 1px solid #000; padding: 12px; background: transparent; width: 100%; outline: none; }
+        .input-minimal:focus { background-color: #fafafa; }
+        .peak-footer { border-top: 1px solid #000; }
+        .review-card { border-left: 2px solid #000; padding-left: 24px; margin-bottom: 48px; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
 
+    <nav class="p-6 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-black">
+        <h1 class="text-2xl font-black tracking-tighter uppercase"><a href="index.html">Madagascar Mall</a></h1>
+        <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
+            <a href="index.html" class="hover:underline">Home</a>
+            <a href="reviews.html" class="underline">Reviews</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-20 w-full">
+        
+        <section class="mb-24">
+            <h2 class="text-4xl font-black uppercase mb-8 tracking-tighter">Submit a Review</h2>
+            <div class="space-y-4">
+                <input type="text" id="reviewerName" placeholder="NAME / ORGANIZATION" class="input-minimal uppercase text-xs font-bold">
+                <textarea id="reviewerText" placeholder="YOUR MESSAGE" class="input-minimal h-40 uppercase text-xs font-bold"></textarea>
+                <button onclick="submitReview()" class="w-full md:w-auto bg-black text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition">
+                    Submit Feedback
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-[10px] font-bold uppercase tracking-[0.5em] mb-12 text-gray-400">Public Feedback Wall</h3>
+            <div id="reviewWall">
+                <div class="review-card">
+                    <p class="text-xs font-black uppercase mb-2">Jessica Herminstone</p>
+                    <p class="text-base font-light italic leading-relaxed">"This is a great unique spot for Nairobi. The furniture selection is excellent and the container style is very modern."</p>
+                </div>
+                <div class="review-card">
+                    <p class="text-xs font-black uppercase mb-2">Rascoh Stinger</p>
+                    <p class="text-base font-light italic leading-relaxed">"Very awesome place for kids. Safe environment and very distinct architecture. Highly recommend visiting."</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="peak-footer bg-white p-10 mt-10">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-xs uppercase tracking-widest font-bold">
+            <div>
+                <h4 class="mb-4 text-gray-400">Inquiries</h4>
+                <p>0742 152821</p>
+            </div>
+            <div>
+                <h4 class="mb-4 text-gray-400">Legal</h4>
+                <p><a href="#" class="hover:text-gray-500">Privacy Policy</a></p>
+                <p><a href="#" class="hover:text-gray-500">Cookie Policy</a></p>
+            </div>
+            <div>
+                <h4 class="mb-4 text-gray-400">Access</h4>
+                <p>My Account</p>
+                <p>© 2025 Madagascar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
