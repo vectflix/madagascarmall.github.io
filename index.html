@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madagascar Mall | Official Platform</title>
+    <title>Rheemah Hospital | Tassia Medical Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         body { 
             font-family: "Times New Roman", Times, serif; 
             scroll-behavior: smooth; 
-            background: linear-gradient(135deg, #09090b, #1e1b4b, #09090b); 
+            background: linear-gradient(135deg, #050505, #1e1b4b, #050505); 
             color: #ffffff; 
             min-height: 100vh;
             margin: 0;
             overflow-x: hidden;
         }
         
-        /* Glassmorphism Effect */
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -27,12 +26,13 @@
         }
 
         .gold-accent { color: #D4AF37; }
-        .purple-accent { color: #c084fc; }
+        .medical-blue { color: #38bdf8; }
+        .section-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(56, 189, 248, 0.7); margin-bottom: 8px; display: block; }
         
         .nav-glass {
             background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         input, textarea {
@@ -44,9 +44,7 @@
             width: 100%;
             outline: none;
         }
-        input:focus { border-color: #c084fc !important; }
 
-        /* Star Rating System */
         .star-rating {
             display: flex;
             flex-direction: row-reverse;
@@ -54,17 +52,8 @@
             gap: 4px;
         }
         .star-rating input { display: none; }
-        .star-rating label {
-            font-size: 28px;
-            color: rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .star-rating input:checked ~ label,
-        .star-rating label:hover,
-        .star-rating label:hover ~ label {
-            color: #D4AF37;
-        }
+        .star-rating label { font-size: 28px; color: rgba(255, 255, 255, 0.2); cursor: pointer; }
+        .star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label { color: #D4AF37; }
 
         .whatsapp-float {
             position: fixed; bottom: 20px; right: 20px;
@@ -81,69 +70,87 @@
 </head>
 <body class="flex flex-col">
 
-    <a href="https://wa.me/254742152821" target="_blank" class="whatsapp-float">Chat with Mall</a>
+    <a href="https://wa.me/254721800701" target="_blank" class="whatsapp-float">24/7 Medical Help</a>
 
     <nav class="nav-glass p-4 md:p-6 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-center md:text-left">
-                <h1 class="text-2xl md:text-4xl font-bold uppercase tracking-tighter">MADAGASCAR <span class="gold-accent">MALL</span></h1>
-                <p class="text-[8px] tracking-[0.3em] uppercase font-bold text-purple-400">Industrial Excellence • Nairobi</p>
+                <h1 class="text-2xl md:text-4xl font-bold uppercase tracking-tighter">RHEEMAH <span class="medical-blue">HOSPITAL</span></h1>
+                <p class="text-[8px] tracking-[0.3em] uppercase font-bold text-zinc-400">Fedha Rd • Tassia • Nairobi</p>
             </div>
             
             <div class="w-full max-w-lg flex glass overflow-hidden border border-white/10">
-                <input type="text" placeholder="Search shops..." class="bg-transparent border-none text-xs px-4 py-2">
-                <button class="bg-purple-700 text-white px-5 py-2 font-bold uppercase text-[9px] tracking-widest">Search</button>
+                <input type="text" id="mainSearch" placeholder="Search: Surgery, Maternity, Dental, Pharmacy..." class="bg-transparent border-none text-xs px-4 py-2">
+                <button onclick="searchPage()" class="bg-sky-700 text-white px-5 py-2 font-bold uppercase text-[9px] tracking-widest">Search</button>
             </div>
 
             <div class="flex gap-6 md:gap-8 text-[10px] font-bold uppercase tracking-widest">
-                <a href="#" onclick="showPage('main')" class="hover:text-purple-400 transition">Home</a>
-                <a href="#" onclick="showPage('reviews')" class="hover:text-purple-400 transition">Reviews</a>
-                <a href="#" onclick="showPage('portal')" class="hover:text-purple-400 transition border-b border-purple-500 pb-1">Account</a>
+                <a href="#" onclick="showPage('main')" class="hover:text-sky-400">Home</a>
+                <a href="#" onclick="showPage('reviews')" class="hover:text-sky-400">Reviews</a>
+                <a href="#" onclick="showPage('portal')" class="hover:text-sky-400">Portal</a>
             </div>
         </div>
     </nav>
 
     <div id="page-main">
-        <section class="max-w-6xl mx-auto py-12 md:py-24 px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-                <div class="glass p-8 md:p-12">
-                    <h2 class="text-4xl md:text-6xl font-bold italic mb-6 leading-tight">Elite <br><span class="purple-accent underline">Nexus.</span></h2>
-                    <p class="text-sm md:text-lg text-zinc-300 font-light leading-relaxed">
-                        Nairobi's industrial gem in Embakasi. Home to Jus'Praktikal Beds and premier trading units. We offer a secure, modern environment for business growth.
-                    </p>
+        <section class="max-w-6xl mx-auto py-12 md:py-20 px-6">
+            <span class="section-tag text-center md:text-left">Welcome to Rheemah</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="glass p-8 md:p-12 border-t-4 border-sky-500">
+                    <h2 id="heading-emergency" class="text-4xl md:text-6xl font-bold italic mb-6 leading-tight">Advanced <br><span class="medical-blue underline">Healthcare.</span></h2>
+                    <p class="text-sm md:text-lg text-zinc-300 font-light mb-6">Open 24 hours for Tassia and Fedha residents. Experience prompt diagnosis and personalized care.</p>
+                    <p class="text-xl font-bold gold-accent">Hotline: 0721 800701</p>
                 </div>
-                <div class="glass p-8 md:p-10 border-l-4 border-purple-500">
-                    <h4 class="font-bold uppercase text-xs gold-accent tracking-widest mb-6">Accessibility Specs</h4>
-                    <div class="space-y-3 text-xs md:text-sm font-light">
-                        <p> Wheelchair-accessible car park</p>
-                        <p> Wheelchair-accessible entrance</p>
-                        <p> Wheelchair-accessible toilet</p>
-                        <p> Arcade games & Amenities</p>
-                        <p> 24/7 Surveillance & Security</p>
-                    </div>
+                <div class="glass p-8 md:p-10 border-l-4 border-sky-500">
+                    <h3 id="heading-accessibility" class="font-bold uppercase text-xs gold-accent tracking-widest mb-6">Accessibility & Facilities</h3>
+                    <ul class="space-y-3 text-xs md:text-sm font-light">
+                        <li> Wheelchair-accessible car park</li>
+                        <li> Wheelchair-accessible entrance</li>
+                        <li> In-patient & Out-patient units</li>
+                        <li> 24-Hour Emergency Response</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="py-12 md:py-24 border-y border-white/5 bg-black/20">
-            <div class="max-w-7xl mx-auto px-6">
-                <h3 class="text-center text-3xl font-bold mb-10 md:mb-16 uppercase italic">Gallery Showcase</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-6">
-                    <script>
-                        for(let i=1; i<=10; i++) {
-                            document.write(`<div class="aspect-[3/4] glass p-1 group overflow-hidden shadow-2xl"><img src="images/m${i}.jpg" alt="Mall View ${i}" class="w-full h-full object-cover rounded grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000"></div>`);
-                        }
-                    </script>
+        <section class="max-w-6xl mx-auto py-12 px-6">
+            <span class="section-tag">Medical Departments</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-8 hover:border-sky-500 transition">
+                    <h3 id="heading-maternity" class="text-2xl font-bold italic mb-4 medical-blue">Maternity Wing</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Dedicated prenatal, delivery, and postnatal care. Safe and comfortable environment for mothers and infants.</p>
+                </div>
+                <div class="glass p-8 hover:border-sky-500 transition">
+                    <h3 id="heading-surgery" class="text-2xl font-bold italic mb-4 medical-blue">Surgical Center</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Minor and major surgical procedures performed by expert surgeons in our modern theater.</p>
+                </div>
+                <div class="glass p-8 hover:border-sky-500 transition">
+                    <h3 id="heading-dental" class="text-2xl font-bold italic mb-4 medical-blue">Dental Clinic</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Comprehensive oral health services, including diagnostics, extractions, and restorative dentistry.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto py-12 px-6 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass p-8">
+                    <h3 id="heading-lab" class="text-xl font-bold uppercase gold-accent mb-4">Laboratory & Pharmacy</h3>
+                    <p class="text-xs text-zinc-300">Equipped with modern diagnostic tools for fast and accurate medical testing and a fully stocked 24-hour pharmacy.</p>
+                </div>
+                <div class="glass p-8">
+                    <h3 id="heading-payments" class="text-xl font-bold uppercase gold-accent mb-4">Accepted Payments</h3>
+                    <p class="text-xs text-zinc-300">Credit/Debit Cards, M-Pesa, NFC Mobile Payments, and leading Health Insurances.</p>
                 </div>
             </div>
         </section>
     </div>
 
     <div id="page-reviews" class="hidden max-w-4xl mx-auto py-12 md:py-24 px-6">
-        <h2 class="text-3xl font-bold uppercase mb-12 italic tracking-tighter">Community Wall</h2>
+        <h2 id="heading-reviews" class="text-3xl font-bold uppercase mb-4 italic">Verified Reviews</h2>
+        <p class="text-[10px] text-zinc-500 mb-12 uppercase">Rating: 4.4/5 Stars (Tassia Community Feed)</p>
         
         <div id="review-input-zone" class="mb-16 glass p-8 md:p-12 hidden">
-            <h4 class="text-[10px] font-bold uppercase mb-4 tracking-widest gold-accent">Rate & Review</h4>
+            <h4 class="text-[10px] font-bold uppercase mb-4 tracking-widest medical-blue">Rate Your Visit</h4>
             <div class="star-rating mb-6">
                 <input type="radio" id="star5" name="rating" value="5"/><label for="star5">★</label>
                 <input type="radio" id="star4" name="rating" value="4"/><label for="star4">★</label>
@@ -151,48 +158,43 @@
                 <input type="radio" id="star2" name="rating" value="2"/><label for="star2">★</label>
                 <input type="radio" id="star1" name="rating" value="1"/><label for="star1">★</label>
             </div>
-            <textarea id="rev-text" placeholder="Share your experience..." class="w-full h-32 mb-6 text-sm"></textarea>
-            <button onclick="saveReview()" class="w-full md:w-auto bg-purple-600 text-white px-10 py-3 font-bold uppercase text-[10px] tracking-widest hover:bg-purple-500">Submit</button>
+            <textarea id="rev-text" placeholder="Tell us about your recovery..." class="w-full h-32 mb-6 text-sm"></textarea>
+            <button onclick="saveReview()" class="w-full md:w-auto bg-sky-600 px-10 py-3 font-bold uppercase text-[10px]">Submit</button>
         </div>
 
-        <div id="login-to-post" class="mb-16 glass p-12 text-center border-dashed border-white/20">
-            <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-500">Login to unlock ratings</p>
+        <div id="login-to-post" class="mb-16 glass p-12 text-center border-dashed">
+            <p class="text-[9px] uppercase tracking-[0.3em] text-zinc-500">Sign in to leave a review</p>
         </div>
 
-        <div id="review-list" class="space-y-8"></div>
+        <div id="review-list" class="space-y-8">
+            </div>
     </div>
 
     <div id="page-portal" class="hidden max-w-md mx-auto py-12 md:py-24 px-6">
         <div id="auth-container" class="glass p-8 md:p-12 text-center shadow-2xl">
-            <h3 id="auth-title" class="text-2xl font-bold mb-8 uppercase italic">Mall Portal</h3>
+            <h3 id="heading-login" class="text-2xl font-bold mb-8 uppercase italic">Secure Portal</h3>
             <input id="auth-email" type="email" placeholder="EMAIL" class="mb-6 text-sm">
             <input id="auth-pass" type="password" placeholder="PASSWORD" class="mb-10 text-sm">
-            <button id="auth-btn" onclick="handleAuth()" class="w-full bg-purple-700 text-white py-4 font-bold uppercase text-[10px] tracking-widest mb-6">Authorize</button>
-            <p class="text-[9px] tracking-widest uppercase">
-                <span id="toggle-text">New Member?</span> 
-                <a href="#" onclick="toggleAuthMode()" id="toggle-link" class="underline font-bold gold-accent ml-2">Sign Up</a>
-            </p>
-            <p id="auth-error" class="text-red-400 text-[9px] mt-6"></p>
+            <button id="auth-btn" onclick="handleAuth()" class="w-full bg-sky-700 text-white py-4 font-bold uppercase text-[10px]">Authorize</button>
+            <p class="text-[9px] mt-4"><a href="#" onclick="toggleAuthMode()" id="toggle-link" class="gold-accent underline">New Patient? Sign Up</a></p>
         </div>
-
-        <div id="user-dashboard" class="hidden text-center p-12 glass border-purple-500/30">
-            <p id="user-email-display" class="text-xs mb-8 text-purple-300 italic"></p>
-            <button onclick="handleLogout()" class="border border-purple-500 px-8 py-2 uppercase text-[10px] font-bold hover:bg-purple-600 transition">Sign Out</button>
+        <div id="user-dashboard" class="hidden text-center p-12 glass">
+            <h3 class="text-xl font-bold mb-4">Patient Profile</h3>
+            <p id="user-email-display" class="text-xs mb-8 text-sky-300 italic"></p>
+            <button onclick="handleLogout()" class="border border-sky-500 px-8 py-2 uppercase text-[10px] font-bold">Sign Out</button>
         </div>
     </div>
 
     <footer class="bg-black/90 p-12 md:p-20 text-[9px] mt-auto font-bold uppercase tracking-[0.4em] border-t border-white/5">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-                <h4 class="text-white mb-4 underline">Legal & Privacy</h4>
-                <p class="normal-case font-light leading-relaxed text-zinc-500">
-                    We use session cookies for security. Verified member data is protected under the Kenya Data Protection Act 2019.
-                </p>
+                <h4 id="heading-privacy" class="text-white mb-4 underline">Data Privacy</h4>
+                <p class="normal-case font-light leading-relaxed text-zinc-500">Health records are confidential. Portal access is encrypted. compliant with Kenya Data Protection Act 2019.</p>
             </div>
             <div class="md:text-right">
-                <p>Embakasi, Nairobi, KE</p>
-                <p class="gold-accent mt-2">0742 152821</p>
-                <p class="mt-12 text-zinc-800">© 2025 Madagascar Mall • Peak Solutions</p>
+                <p>Fedha Road, Tassia, Nairobi</p>
+                <p class="gold-accent mt-2">Tel: 0721 800701</p>
+                <p class="mt-12 text-zinc-800">© 2025 Rheemah Hospital • Peak Business Solutions</p>
             </div>
         </div>
     </footer>
@@ -203,25 +205,17 @@
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         let isSignUpMode = false;
-
         function toggleAuthMode() {
             isSignUpMode = !isSignUpMode;
-            document.getElementById('auth-title').innerText = isSignUpMode ? "Registration" : "Mall Portal";
-            document.getElementById('auth-btn').innerText = isSignUpMode ? "Create Account" : "Authorize";
-            document.getElementById('toggle-link').innerText = isSignUpMode ? "Login" : "Sign Up";
+            document.getElementById('auth-title').innerText = isSignUpMode ? "Register" : "Secure Portal";
         }
 
         async function handleAuth() {
             const email = document.getElementById('auth-email').value;
             const password = document.getElementById('auth-pass').value;
-            const errorEl = document.getElementById('auth-error');
-            if (isSignUpMode) {
-                const { error } = await supabaseClient.auth.signUp({ email, password });
-                if (error) errorEl.innerText = error.message; else alert("Registered! You can now log in.");
-            } else {
-                const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
-                if (error) errorEl.innerText = error.message; else checkUser();
-            }
+            if (isSignUpMode) await supabaseClient.auth.signUp({ email, password });
+            else await supabaseClient.auth.signInWithPassword({ email, password });
+            checkUser();
         }
 
         async function checkUser() {
@@ -233,11 +227,20 @@
             if(user) document.getElementById('user-email-display').innerText = user.email;
         }
 
+        async function searchPage() {
+            const query = document.getElementById('mainSearch').value.toLowerCase();
+            if (query.includes('mater')) window.location.hash = 'heading-maternity';
+            else if (query.includes('surg')) window.location.hash = 'heading-surgery';
+            else if (query.includes('dent')) window.location.hash = 'heading-dental';
+            else if (query.includes('lab')) window.location.hash = 'heading-lab';
+            else if (query.includes('pay')) window.location.hash = 'heading-payments';
+            else if (query.includes('login')) showPage('portal');
+        }
+
         async function saveReview() {
             const text = document.getElementById('rev-text').value;
             const rating = document.querySelector('input[name="rating"]:checked')?.value || 5;
             const { data: { user } } = await supabaseClient.auth.getUser();
-            if(!text || !user) return;
             await supabaseClient.from('reviews').insert([{ 
                 name: user.email.split('@')[0], comment: text, rating: parseInt(rating)
             }]);
@@ -247,21 +250,19 @@
 
         async function loadReviews() {
             const list = document.getElementById('review-list');
-            list.innerHTML = "<p class='text-[9px] uppercase opacity-40 text-center tracking-widest'>Connecting...</p>";
             const { data } = await supabaseClient.from('reviews').select('*').order('created_at', { ascending: false });
             if(data) {
                 list.innerHTML = data.map(r => `
-                    <div class="glass p-8 hover:border-purple-500/50 transition">
-                        <div class="flex justify-between items-center mb-4">
-                            <p class="font-bold gold-accent uppercase text-[9px] tracking-widest">${r.name}</p>
+                    <div class="glass p-8 border-l-2 border-sky-500">
+                        <div class="flex justify-between mb-4">
+                            <p class="font-bold gold-accent uppercase text-[9px]">${r.name}</p>
                             <div class="text-[#D4AF37] text-xs">${"★".repeat(r.rating || 5)}${"☆".repeat(5 - (r.rating || 5))}</div>
                         </div>
-                        <p class="italic text-sm md:text-lg text-zinc-100 font-light">"${r.comment}"</p>
+                        <p class="italic text-lg text-zinc-100 font-light">"${r.comment}"</p>
                     </div>`).join('');
             }
         }
 
-        async function handleLogout() { await supabaseClient.auth.signOut(); checkUser(); }
         function showPage(pId) {
             ['main', 'reviews', 'portal'].forEach(p => document.getElementById('page-' + p).classList.add('hidden'));
             document.getElementById('page-' + pId).classList.remove('hidden');
