@@ -3,77 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madagascar Mall | Nairobi</title>
+    <title>Madagascar Mall | Nairobi's Business Landmark</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000000; }
-        .hero-border { border-bottom: 2px solid #000; }
-        .gallery-img { filter: grayscale(100%); transition: filter 0.3s; border: 1px solid #000; }
-        .gallery-img:hover { filter: grayscale(0%); }
-        .peak-footer { border-top: 1px solid #000; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-title { font-family: 'Playfair Display', serif; }
+        .gold-accent { color: #D4AF37; }
+        .gold-bg { background-color: #D4AF37; }
+        .search-bar { border: 2px solid #1a1a1a; transition: 0.3s; }
+        .search-bar:focus { border-color: #D4AF37; outline: none; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100; transition: 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="bg-white text-zinc-900">
 
-    <nav class="p-6 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-black">
-        <h1 class="text-2xl font-black tracking-tighter uppercase">Madagascar Mall</h1>
-        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-            <a href="index.html" class="underline">Home</a>
-            <a href="reviews.html" class="hover:underline">Reviews</a>
-            <a href="#contact" class="hover:underline">Contact</a>
-        </div>
-        <div class="relative flex items-center border border-black px-2 py-1">
-            <input type="text" placeholder="SEARCH..." class="bg-transparent text-xs outline-none w-24 md:w-40 uppercase">
-            <span class="text-xs">🔍</span>
+    <a href="https://wa.me/254742152821" target="_blank" class="whatsapp-float flex items-center gap-2">
+        <span class="text-xs font-bold uppercase tracking-widest px-2">Chat with us</span>
+    </a>
+
+    <nav class="p-4 bg-white sticky top-0 z-50 shadow-sm border-b border-zinc-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <h1 class="text-3xl font-black hero-title tracking-tighter uppercase">MADAGASCAR <span class="gold-accent">MALL</span></h1>
+            
+            <div class="relative flex-1 max-w-xl w-full flex">
+                <input type="text" placeholder="Find furniture, shops, or food..." class="search-bar w-full px-4 py-2 text-sm">
+                <button class="bg-black text-white px-6 py-2 text-xs font-bold uppercase">Search</button>
+            </div>
+
+            <div class="flex gap-6 text-[11px] font-bold uppercase tracking-widest">
+                <a href="#gallery" class="hover:gold-accent">Gallery</a>
+                <a href="#info" class="hover:gold-accent">About</a>
+                <a href="#footer" class="hover:gold-accent">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow">
-        <section class="max-w-5xl mx-auto px-6 py-20 hero-border">
-            <h2 class="text-6xl md:text-8xl font-black leading-none mb-8 uppercase">Modern. Industrial. Nairobi.</h2>
-            <p class="text-lg md:text-2xl max-w-2xl font-light leading-relaxed">
-                Madagascar Mall is a premier containerized shopping destination located in the heart of Embakasi. 
-                A hub for local businesses, family fun, and unique architecture. Open daily from 8:00 AM to 8:00 PM.
-            </p>
-        </section>
+    <section id="gallery" class="max-w-7xl mx-auto py-12 px-4">
+        <h2 class="text-xs font-bold uppercase tracking-[0.4em] mb-6 text-zinc-400 text-center">Visual Showcase • 10 Frames</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m1.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m2.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m3.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m4.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m5.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m6.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m7.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m8.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m9.jpg" class="w-full h-full object-cover"></div>
+            <div class="bg-zinc-100 aspect-[3/4] overflow-hidden border border-zinc-200"><img src="images/m10.jpg" class="w-full h-full object-cover"></div>
+        </div>
+    </section>
 
-        <section class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-xs font-bold uppercase tracking-[0.3em] mb-8">The Space</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="aspect-square bg-gray-100 flex items-center justify-center border border-black overflow-hidden">
-                    <p class="text-[10px] uppercase font-bold">Mall Exterior</p>
-                </div>
-                <div class="aspect-square bg-gray-100 flex items-center justify-center border border-black overflow-hidden">
-                    <p class="text-[10px] uppercase font-bold">Showroom Interior</p>
-                </div>
-                <div class="aspect-square bg-gray-100 flex items-center justify-center border border-black overflow-hidden">
-                    <p class="text-[10px] uppercase font-bold">Family Zone</p>
-                </div>
+    <section id="info" class="max-w-4xl mx-auto py-20 px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold hero-title mb-8">Nairobi's Most Innovative <span class="gold-accent">Containerized Hub.</span></h2>
+        <p class="text-zinc-500 leading-relaxed mb-10 text-lg">
+            Strategically located in Embakasi, Madagascar Mall is more than a shopping center—it's a vibrant community ecosystem. Designed with industrial flair using eco-friendly shipping containers, we provide a premium home for over 50 businesses, ranging from the famous <strong>Jus'Praktikal Beds</strong> to family-owned bistros and kids' recreation centers.
+        </p>
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div class="p-6 border border-zinc-100 rounded-lg bg-zinc-50">
+                <h4 class="font-bold gold-accent uppercase text-xs mb-2">Visit Us</h4>
+                <p class="text-sm">Unnamed Road, Tassia Area, Nairobi.<br>Open Daily: 08:00 AM - 08:00 PM</p>
             </div>
-        </section>
-    </main>
-
-    <footer id="contact" class="peak-footer bg-white p-10 mt-10">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-xs uppercase tracking-widest font-bold">
-            <div>
-                <h4 class="mb-4 text-gray-400">Location</h4>
-                <p>Unnamed Road, Tassia</p>
-                <p>Nairobi, Kenya</p>
-            </div>
-            <div>
-                <h4 class="mb-4 text-gray-400">Contact</h4>
-                <p>0742 152821</p>
-                <p>info@madagascarmall.co.ke</p>
-            </div>
-            <div>
-                <h4 class="mb-4 text-gray-400">Links</h4>
-                <p><a href="#" class="hover:text-gray-500">Privacy Policy</a></p>
-                <p><a href="#" class="hover:text-gray-500">Cookie Policy</a></p>
-                <p><a href="#" class="hover:text-gray-500">My Account</a></p>
+            <div class="p-6 border border-zinc-100 rounded-lg bg-zinc-50">
+                <h4 class="font-bold gold-accent uppercase text-xs mb-2">Security & Parking</h4>
+                <p class="text-sm">24/7 CCTV surveillance and controlled entry points. Ample free parking for all customers.</p>
             </div>
         </div>
-        <div class="text-center mt-12 text-[10px] text-gray-400 uppercase tracking-widest">
-            © 2025 Madagascar Mall. Official Business Platform.
+    </section>
+
+    <footer id="footer" class="bg-[#111] text-zinc-400 p-12 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-xs uppercase tracking-widest font-bold">
+            <div>
+                <h4 class="text-white mb-6 border-b border-zinc-800 pb-2">My Account</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-white">Profile Dashboard</a></li>
+                    <li><a href="#" class="hover:text-white">Business Portal</a></li>
+                    <li><button class="gold-bg text-black px-4 py-2 mt-2 font-black">Login / Sign Up</button></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white mb-6 border-b border-zinc-800 pb-2">Connect</h4>
+                <p class="mb-2">Main Office: 0742 152821</p>
+                <p class="mb-2">Email: info@madagascarmall.com</p>
+                <p class="normal-case font-light text-zinc-500 mt-4 italic">WhatsApp Support Available 24/7</p>
+            </div>
+
+            <div>
+                <h4 class="text-white mb-6 border-b border-zinc-800 pb-2">Legal Information</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Lease</a></li>
+                </ul>
+            </div>
+
+            <div class="md:text-right">
+                <h4 class="text-white mb-2">Madagascar Mall</h4>
+                <p class="text-[9px] text-zinc-600 mb-8">Nairobi, Kenya</p>
+                <button onclick="window.scrollTo(0,0)" class="border border-zinc-700 px-4 py-2 text-[8px] hover:border-white hover:text-white transition">Back to Top ↑</button>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16 pt-8 border-t border-zinc-900 text-[9px] tracking-[0.6em]">
+            © 2025 MADAGASCAR MALL • PEAK BUSINESS SOLUTIONS
         </div>
     </footer>
 
