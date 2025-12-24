@@ -10,13 +10,14 @@
         body { 
             font-family: "Times New Roman", Times, serif; 
             scroll-behavior: smooth; 
-            background: linear-gradient(135deg, #09090b, #1e1b4b, #09090b); /* Black & Deep Purple Gradient */
+            background: linear-gradient(135deg, #09090b, #1e1b4b, #09090b); 
             color: #ffffff; 
             min-height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
         
-        /* Glassmorphism Styles */
+        /* Glassmorphism Effect */
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -29,7 +30,7 @@
         .purple-accent { color: #c084fc; }
         
         .nav-glass {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(192, 132, 252, 0.2);
         }
@@ -40,62 +41,61 @@
             color: white !important;
             border-radius: 8px;
             padding: 12px;
+            width: 100%;
             outline: none;
         }
-        input:focus { border-color: #c084fc !important; box-shadow: 0 0 10px rgba(192, 132, 252, 0.3); }
+        input:focus { border-color: #c084fc !important; }
 
         /* Star Rating System */
         .star-rating {
             display: flex;
             flex-direction: row-reverse;
             justify-content: flex-end;
-            gap: 8px;
+            gap: 4px;
         }
         .star-rating input { display: none; }
         .star-rating label {
-            font-size: 30px;
+            font-size: 28px;
             color: rgba(255, 255, 255, 0.2);
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: 0.3s;
         }
+        .star-rating input:checked ~ label,
         .star-rating label:hover,
-        .star-rating label:hover ~ label,
-        .star-rating input:checked ~ label {
+        .star-rating label:hover ~ label {
             color: #D4AF37;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
+            position: fixed; bottom: 20px; right: 20px;
             background: #25d366; color: white;
-            padding: 14px 28px; border-radius: 50px;
+            padding: 12px 20px; border-radius: 50px;
             z-index: 1000; font-weight: bold;
+            font-size: 11px; text-transform: uppercase;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             text-decoration: none;
-            transition: transform 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); }
 
         .hidden { display: none; }
     </style>
 </head>
 <body class="flex flex-col">
 
-    <a href="https://wa.me/254742152821" target="_blank" class="whatsapp-float uppercase tracking-widest text-[10px]">Chat with Mall</a>
+    <a href="https://wa.me/254742152821" target="_blank" class="whatsapp-float">Chat with Mall</a>
 
-    <nav class="nav-glass p-6 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <nav class="nav-glass p-4 md:p-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-center md:text-left">
-                <h1 class="text-4xl font-bold uppercase tracking-tighter leading-none">MADAGASCAR <span class="gold-accent">MALL</span></h1>
-                <p class="text-[9px] tracking-[0.4em] uppercase font-bold text-purple-400 mt-1 italic">Nairobi's Premium Destination</p>
+                <h1 class="text-2xl md:text-4xl font-bold uppercase tracking-tighter">MADAGASCAR <span class="gold-accent">MALL</span></h1>
+                <p class="text-[8px] tracking-[0.3em] uppercase font-bold text-purple-400">Industrial Excellence • Nairobi</p>
             </div>
             
-            <div class="flex-1 max-w-lg flex glass overflow-hidden border border-white/10">
-                <input type="text" placeholder="Search shops, services, or units..." class="w-full bg-transparent border-none px-4 text-sm">
-                <button class="bg-purple-700 text-white px-6 py-2 font-bold uppercase text-[10px] tracking-widest hover:bg-purple-600 transition">Search</button>
+            <div class="w-full max-w-lg flex glass overflow-hidden border border-white/10">
+                <input type="text" placeholder="Search shops..." class="bg-transparent border-none text-xs px-4 py-2">
+                <button class="bg-purple-700 text-white px-5 py-2 font-bold uppercase text-[9px] tracking-widest">Search</button>
             </div>
 
-            <div class="flex gap-8 text-[11px] font-bold uppercase tracking-widest">
+            <div class="flex gap-6 md:gap-8 text-[10px] font-bold uppercase tracking-widest">
                 <a href="#" onclick="showPage('main')" class="hover:text-purple-400 transition">Home</a>
                 <a href="#" onclick="showPage('reviews')" class="hover:text-purple-400 transition">Reviews</a>
                 <a href="#" onclick="showPage('portal')" class="hover:text-purple-400 transition border-b border-purple-500 pb-1">Account</a>
@@ -104,35 +104,34 @@
     </nav>
 
     <div id="page-main">
-        <section class="max-w-6xl mx-auto py-24 px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <div class="glass p-12">
-                    <h2 class="text-6xl font-bold italic mb-8 leading-tight">Beyond <br><span class="purple-accent underline">Commerce.</span></h2>
-                    <p class="text-lg leading-relaxed text-zinc-300 font-light">
-                        Strategically located in Embakasi, Madagascar Mall is the nexus of retail and industrial excellence. 
-                        Home to <strong>Jus'Praktikal Beds</strong> and high-tier amenities.
+        <section class="max-w-6xl mx-auto py-12 md:py-24 px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                <div class="glass p-8 md:p-12">
+                    <h2 class="text-4xl md:text-6xl font-bold italic mb-6 leading-tight">Elite <br><span class="purple-accent underline">Nexus.</span></h2>
+                    <p class="text-sm md:text-lg text-zinc-300 font-light leading-relaxed">
+                        Nairobi's industrial gem in Embakasi. Home to Jus'Praktikal Beds and premier trading units. We offer a secure, modern environment for business growth.
                     </p>
                 </div>
-                <div class="glass p-10 border-l-4 border-purple-500">
-                    <h4 class="font-bold uppercase text-xs gold-accent tracking-widest mb-6 underline">Accessibility & Safety</h4>
-                    <div class="space-y-4 text-sm font-light">
+                <div class="glass p-8 md:p-10 border-l-4 border-purple-500">
+                    <h4 class="font-bold uppercase text-xs gold-accent tracking-widest mb-6">Accessibility Specs</h4>
+                    <div class="space-y-3 text-xs md:text-sm font-light">
                         <p> Wheelchair-accessible car park</p>
                         <p> Wheelchair-accessible entrance</p>
                         <p> Wheelchair-accessible toilet</p>
-                        <p> Arcade games & Family zones</p>
-                        <p> 24/7 Security & Global Payments</p>
+                        <p> Arcade games & Amenities</p>
+                        <p> 24/7 Surveillance & Security</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 border-y border-white/5 bg-black/20">
+        <section class="py-12 md:py-24 border-y border-white/5 bg-black/20">
             <div class="max-w-7xl mx-auto px-6">
-                <h3 class="text-center text-4xl font-bold mb-16 uppercase italic tracking-tighter">Gallery Showcase</h3>
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <h3 class="text-center text-3xl font-bold mb-10 md:mb-16 uppercase italic">Gallery Showcase</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-6">
                     <script>
                         for(let i=1; i<=10; i++) {
-                            document.write(`<div class="aspect-[3/4] glass p-1.5 group overflow-hidden"><img src="images/m${i}.jpg" class="w-full h-full object-cover rounded shadow-2xl grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000"></div>`);
+                            document.write(`<div class="aspect-[3/4] glass p-1 group overflow-hidden shadow-2xl"><img src="images/m${i}.jpg" alt="Mall View ${i}" class="w-full h-full object-cover rounded grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000"></div>`);
                         }
                     </script>
                 </div>
@@ -140,64 +139,60 @@
         </section>
     </div>
 
-    <div id="page-reviews" class="hidden max-w-4xl mx-auto py-24 px-6">
-        <h2 class="text-4xl font-bold uppercase mb-12 italic tracking-tighter">Community Wall</h2>
+    <div id="page-reviews" class="hidden max-w-4xl mx-auto py-12 md:py-24 px-6">
+        <h2 class="text-3xl font-bold uppercase mb-12 italic tracking-tighter">Community Wall</h2>
         
-        <div id="review-input-zone" class="mb-20 glass p-12 hidden">
-            <h4 class="text-xs font-bold uppercase mb-6 tracking-widest gold-accent">Rate your experience</h4>
-            
-            <div class="star-rating mb-8">
+        <div id="review-input-zone" class="mb-16 glass p-8 md:p-12 hidden">
+            <h4 class="text-[10px] font-bold uppercase mb-4 tracking-widest gold-accent">Rate & Review</h4>
+            <div class="star-rating mb-6">
                 <input type="radio" id="star5" name="rating" value="5"/><label for="star5">★</label>
                 <input type="radio" id="star4" name="rating" value="4"/><label for="star4">★</label>
                 <input type="radio" id="star3" name="rating" value="3"/><label for="star3">★</label>
                 <input type="radio" id="star2" name="rating" value="2"/><label for="star2">★</label>
                 <input type="radio" id="star1" name="rating" value="1"/><label for="star1">★</label>
             </div>
-
-            <textarea id="rev-text" placeholder="Your feedback matters to us..." class="w-full h-32 mb-8"></textarea>
-            <button onclick="saveReview()" class="bg-purple-600 text-white px-12 py-4 font-bold uppercase text-xs tracking-widest hover:bg-purple-500 shadow-lg shadow-purple-500/20">Post Review</button>
+            <textarea id="rev-text" placeholder="Share your experience..." class="w-full h-32 mb-6 text-sm"></textarea>
+            <button onclick="saveReview()" class="w-full md:w-auto bg-purple-600 text-white px-10 py-3 font-bold uppercase text-[10px] tracking-widest hover:bg-purple-500">Submit</button>
         </div>
 
-        <div id="login-to-post" class="mb-20 glass p-16 text-center border-dashed border-white/20">
-            <p class="text-xs uppercase tracking-[0.4em] text-zinc-500 mb-6">Login required to leave a rating</p>
-            <button onclick="showPage('portal')" class="font-bold underline purple-accent text-sm tracking-widest">GOTO PORTAL</button>
+        <div id="login-to-post" class="mb-16 glass p-12 text-center border-dashed border-white/20">
+            <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-500">Login to unlock ratings</p>
         </div>
 
-        <div id="review-list" class="space-y-12"></div>
+        <div id="review-list" class="space-y-8"></div>
     </div>
 
-    <div id="page-portal" class="hidden max-w-md mx-auto py-24 px-6">
-        <div id="auth-container" class="glass p-12 text-center shadow-2xl border-purple-500/20">
-            <h3 id="auth-title" class="text-3xl font-bold mb-10 uppercase italic">Mall Access</h3>
-            <input id="auth-email" type="email" placeholder="EMAIL ADDRESS" class="mb-8">
-            <input id="auth-pass" type="password" placeholder="PASSWORD" class="mb-12">
-            <button id="auth-btn" onclick="handleAuth()" class="w-full bg-purple-700 text-white py-5 font-bold uppercase text-[10px] tracking-widest mb-6">Authorize</button>
-            <p class="text-[9px] tracking-widest uppercase text-zinc-500">
+    <div id="page-portal" class="hidden max-w-md mx-auto py-12 md:py-24 px-6">
+        <div id="auth-container" class="glass p-8 md:p-12 text-center shadow-2xl">
+            <h3 id="auth-title" class="text-2xl font-bold mb-8 uppercase italic">Mall Portal</h3>
+            <input id="auth-email" type="email" placeholder="EMAIL" class="mb-6 text-sm">
+            <input id="auth-pass" type="password" placeholder="PASSWORD" class="mb-10 text-sm">
+            <button id="auth-btn" onclick="handleAuth()" class="w-full bg-purple-700 text-white py-4 font-bold uppercase text-[10px] tracking-widest mb-6">Authorize</button>
+            <p class="text-[9px] tracking-widest uppercase">
                 <span id="toggle-text">New Member?</span> 
                 <a href="#" onclick="toggleAuthMode()" id="toggle-link" class="underline font-bold gold-accent ml-2">Sign Up</a>
             </p>
-            <p id="auth-error" class="text-red-400 text-[9px] mt-6 uppercase"></p>
+            <p id="auth-error" class="text-red-400 text-[9px] mt-6"></p>
         </div>
 
-        <div id="user-dashboard" class="hidden text-center p-16 glass border-purple-500/30">
-            <h3 class="text-2xl font-bold mb-4 uppercase italic">Verified Access</h3>
-            <p id="user-email-display" class="text-xs mb-12 text-purple-300 italic"></p>
-            <button onclick="handleLogout()" class="border border-purple-500 px-10 py-3 uppercase text-[10px] font-bold hover:bg-purple-600 transition">Sign Out</button>
+        <div id="user-dashboard" class="hidden text-center p-12 glass border-purple-500/30">
+            <p id="user-email-display" class="text-xs mb-8 text-purple-300 italic"></p>
+            <button onclick="handleLogout()" class="border border-purple-500 px-8 py-2 uppercase text-[10px] font-bold hover:bg-purple-600 transition">Sign Out</button>
         </div>
     </div>
 
-    <footer class="bg-black/90 p-20 text-[10px] mt-auto font-bold uppercase tracking-[0.4em] border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+    <footer class="bg-black/90 p-12 md:p-20 text-[9px] mt-auto font-bold uppercase tracking-[0.4em] border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-                <h4 class="text-white mb-6 underline">Policy & Cookies</h4>
-                <p class="normal-case font-light leading-relaxed text-zinc-500 max-w-sm">
-                    We utilize essential session cookies for secure authentication. User reviews and star ratings are stored in the Madagascar Mall cloud. All data is managed under the Data Protection Act of 2019.
+                <h4 class="text-white mb-4 underline">Legal & Privacy</h4>
+                <p class="normal-case font-light leading-relaxed text-zinc-500">
+                    We use session cookies for security. Verified member data is protected under the Kenya Data Protection Act 2019.
                 </p>
             </div>
             <div class="md:text-right">
-                <p class="text-white">Embakasi, Nairobi, Kenya</p>
-                <p class="gold-accent mt-3">T: 0742 152821</p>
-                <p class="mt-16 text-zinc-800">© 2025 Madagascar Mall Official • Peak Business Solutions</p>
+                <p>Embakasi, Nairobi, KE</p>
+                <p class="gold-accent mt-2">0742 152821</p>
+                <p class="mt-12 text-zinc-800">© 2025 Madagascar Mall • Peak Solutions</p>
             </div>
         </div>
     </footer>
@@ -211,7 +206,7 @@
 
         function toggleAuthMode() {
             isSignUpMode = !isSignUpMode;
-            document.getElementById('auth-title').innerText = isSignUpMode ? "Registration" : "Mall Access";
+            document.getElementById('auth-title').innerText = isSignUpMode ? "Registration" : "Mall Portal";
             document.getElementById('auth-btn').innerText = isSignUpMode ? "Create Account" : "Authorize";
             document.getElementById('toggle-link').innerText = isSignUpMode ? "Login" : "Sign Up";
         }
@@ -222,7 +217,7 @@
             const errorEl = document.getElementById('auth-error');
             if (isSignUpMode) {
                 const { error } = await supabaseClient.auth.signUp({ email, password });
-                if (error) errorEl.innerText = error.message; else alert("Registration successful! Sign in now.");
+                if (error) errorEl.innerText = error.message; else alert("Registered! You can now log in.");
             } else {
                 const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
                 if (error) errorEl.innerText = error.message; else checkUser();
@@ -231,18 +226,11 @@
 
         async function checkUser() {
             const { data: { user } } = await supabaseClient.auth.getUser();
-            if (user) {
-                document.getElementById('auth-container').classList.add('hidden');
-                document.getElementById('user-dashboard').classList.remove('hidden');
-                document.getElementById('user-email-display').innerText = user.email;
-                document.getElementById('review-input-zone').classList.remove('hidden');
-                document.getElementById('login-to-post').classList.add('hidden');
-            } else {
-                document.getElementById('auth-container').classList.remove('hidden');
-                document.getElementById('user-dashboard').classList.add('hidden');
-                document.getElementById('review-input-zone').classList.add('hidden');
-                document.getElementById('login-to-post').classList.remove('hidden');
-            }
+            document.getElementById('auth-container').classList.toggle('hidden', !!user);
+            document.getElementById('user-dashboard').classList.toggle('hidden', !user);
+            document.getElementById('review-input-zone').classList.toggle('hidden', !user);
+            document.getElementById('login-to-post').classList.toggle('hidden', !!user);
+            if(user) document.getElementById('user-email-display').innerText = user.email;
         }
 
         async function saveReview() {
@@ -250,35 +238,34 @@
             const rating = document.querySelector('input[name="rating"]:checked')?.value || 5;
             const { data: { user } } = await supabaseClient.auth.getUser();
             if(!text || !user) return;
-            const { error } = await supabaseClient.from('reviews').insert([{ 
-                name: user.email.split('@')[0], 
-                comment: text,
-                rating: parseInt(rating)
+            await supabaseClient.from('reviews').insert([{ 
+                name: user.email.split('@')[0], comment: text, rating: parseInt(rating)
             }]);
-            if(!error) { document.getElementById('rev-text').value = ''; loadReviews(); }
+            document.getElementById('rev-text').value = '';
+            loadReviews();
         }
 
         async function loadReviews() {
             const list = document.getElementById('review-list');
-            list.innerHTML = "<p class='text-[10px] uppercase italic opacity-40 text-center tracking-widest'>Connecting to cloud...</p>";
+            list.innerHTML = "<p class='text-[9px] uppercase opacity-40 text-center tracking-widest'>Connecting...</p>";
             const { data } = await supabaseClient.from('reviews').select('*').order('created_at', { ascending: false });
             if(data) {
                 list.innerHTML = data.map(r => `
-                    <div class="glass p-10 group hover:border-purple-500/50 transition duration-500">
-                        <div class="flex justify-between items-center mb-6">
-                            <p class="font-bold gold-accent uppercase text-[10px] tracking-[0.4em]">${r.name}</p>
-                            <div class="text-[#D4AF37] text-sm">${"★".repeat(r.rating || 5)}${"☆".repeat(5 - (r.rating || 5))}</div>
+                    <div class="glass p-8 hover:border-purple-500/50 transition">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="font-bold gold-accent uppercase text-[9px] tracking-widest">${r.name}</p>
+                            <div class="text-[#D4AF37] text-xs">${"★".repeat(r.rating || 5)}${"☆".repeat(5 - (r.rating || 5))}</div>
                         </div>
-                        <p class="italic text-xl text-zinc-100 font-light leading-relaxed">"${r.comment}"</p>
+                        <p class="italic text-sm md:text-lg text-zinc-100 font-light">"${r.comment}"</p>
                     </div>`).join('');
             }
         }
 
         async function handleLogout() { await supabaseClient.auth.signOut(); checkUser(); }
-        function showPage(pageId) {
+        function showPage(pId) {
             ['main', 'reviews', 'portal'].forEach(p => document.getElementById('page-' + p).classList.add('hidden'));
-            document.getElementById('page-' + pageId).classList.remove('hidden');
-            if(pageId === 'reviews') loadReviews();
+            document.getElementById('page-' + pId).classList.remove('hidden');
+            if(pId === 'reviews') loadReviews();
             window.scrollTo(0,0);
         }
         checkUser();
